@@ -43,7 +43,7 @@
 
 static const CGFloat JSBadgeViewShadowRadius = 1.0f;
 static const CGFloat JSBadgeViewHeight = 16.0f;
-static const CGFloat JSBadgeViewTextSideMargin = 8.0f;
+static const CGFloat JSBadgeViewTextSideMargin = 10.0f;
 static const CGFloat JSBadgeViewCornerRadius = 10.0f;
 
 // Thanks to Peter Steinberger: https://gist.github.com/steipete/6526860
@@ -125,6 +125,8 @@ static BOOL JSBadgeViewIsUIKitFlatMode(void)
     if ((self = [self initWithFrame:CGRectZero]))
     {
         self.badgeAlignment = alignment;
+        self.badgeHeight =  JSBadgeViewHeight;
+        self.badgeTextSideMargin = JSBadgeViewTextSideMargin;
         [parentView addSubview:self];
     }
     
@@ -149,7 +151,7 @@ static BOOL JSBadgeViewIsUIKitFlatMode(void)
 
     const CGFloat marginToDrawInside = [self marginToDrawInside];
     const CGFloat viewWidth = textWidth + JSBadgeViewTextSideMargin + (marginToDrawInside * 2);
-    const CGFloat viewHeight = JSBadgeViewHeight + (marginToDrawInside * 2);
+    const CGFloat viewHeight = self.badgeHeight + (marginToDrawInside * 2);
     
     const CGFloat superviewWidth = superviewBounds.size.width;
     const CGFloat superviewHeight = superviewBounds.size.height;

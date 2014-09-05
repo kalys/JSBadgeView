@@ -88,6 +88,16 @@ typedef NS_ENUM(NSUInteger, JSBadgeViewAlignment)
 @property (nonatomic, assign) CGRect frameToPositionInRelationWith UI_APPEARANCE_SELECTOR;
 
 /**
+ * Height.
+ */
+
+@property (nonatomic, assign) CGFloat badgeHeight;
+/**
+ * Text side margin.
+ */
+@property (nonatomic, assign) CGFloat badgeTextSideMargin;
+
+/**
  * Optionally init using this method to have the badge automatically added to another view.
  */
 - (id)initWithParentView:(UIView *)parentView alignment:(JSBadgeViewAlignment)alignment;
